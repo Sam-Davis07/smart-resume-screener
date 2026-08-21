@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.pyc
+venv/
+
+# Environment
+.env
+.env.local
+
+# Uploads
+uploads/
+
+# Next.js
+frontend/.next/
+frontend/node_modules/
+
+# IDE
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
