@@ -3,10 +3,10 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from app.api.routes.resume import router as resume_router
 from app.api.routes.jobs import router as jobs_router
-
 from app.api.routes.screening import router as screening_router
 from app.api.routes.dashboard import router as dashboard_router
 from app.api.routes.search import router as search_router
+
 
 app = FastAPI(
     title="Smart Resume Screener API",
@@ -15,22 +15,36 @@ app = FastAPI(
 )
 
 
+# --------------------------------
+# CORS
+# --------------------------------
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],
+    allow_origins=[
+        "http://localhost:3000",
+        "https://smart-resume-screener-ec426dqkf-sam-davis07s-projects.vercel.app/",
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
 
+# --------------------------------
+# Routers
+# --------------------------------
+
 app.include_router(resume_router)
 app.include_router(jobs_router)
 app.include_router(screening_router)
-app.include_router(
-    dashboard_router
-)
+app.include_router(dashboard_router)
 app.include_router(search_router)
+
+
+# --------------------------------
+# Root
+# --------------------------------
 
 @app.get("/")
 def root():
@@ -38,6 +52,10 @@ def root():
         "message": "Smart Resume Screener API is running"
     }
 
+
+# --------------------------------
+# Health
+# --------------------------------
 
 @app.get("/health")
 def health():
