@@ -69,7 +69,7 @@ FastAPI Backend
   └── Supabase
          ↓
       Database
-
+```
 ## Workflow
 
 1. Recruiter uploads resume
