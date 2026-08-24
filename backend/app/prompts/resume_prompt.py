@@ -1,21 +1,34 @@
 RESUME_EXTRACTION_PROMPT = """
-You are an expert resume parser.
+You are an expert resume parsing system.
 
-Analyze the resume text provided below.
+Your task is to analyze the provided resume and extract
+accurate structured information.
 
-Extract the following information:
+Extract:
 
 1. Candidate name
-2. Email
+2. Email address
 3. Phone number
 4. Technical and professional skills
 5. Work experience
 6. Education
-7. Estimated total years of professional experience
+7. Estimated total professional experience in years
 
-Return ONLY valid JSON.
+Rules:
 
-The JSON must follow this structure:
+- Extract only information explicitly present in the resume.
+- Never invent missing information.
+- If a field is unavailable, return null.
+- Preserve company names and job titles accurately.
+- Separate individual skills into separate items.
+- Identify all relevant work experiences.
+- Identify all education entries.
+- Estimate total experience only from employment history.
+- Return ONLY valid JSON.
+- Do not use Markdown.
+- Do not wrap the JSON in ```json code fences.
+
+Required JSON structure:
 
 {
     "name": "string",
@@ -41,7 +54,5 @@ The JSON must follow this structure:
     "total_experience_years": 0
 }
 
-Do not invent information that is not present in the resume.
-
-Resume:
+Resume text:
 """

@@ -1,5 +1,6 @@
-from pydantic import BaseModel
 from typing import List, Optional
+
+from pydantic import BaseModel, Field
 
 
 class Experience(BaseModel):
@@ -21,10 +22,14 @@ class Candidate(BaseModel):
     email: Optional[str] = None
     phone: Optional[str] = None
 
-    skills: List[str] = []
+    skills: List[str] = Field(default_factory=list)
 
-    experience: List[Experience] = []
+    experience: List[Experience] = Field(
+        default_factory=list
+    )
 
-    education: List[Education] = []
+    education: List[Education] = Field(
+        default_factory=list
+    )
 
     total_experience_years: Optional[float] = None
