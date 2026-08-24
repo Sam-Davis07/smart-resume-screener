@@ -51,18 +51,24 @@ and rank candidates based on AI-generated screening results.
 
 ## Architecture
 
+```text
 User
   ↓
 Next.js Frontend
   ↓
 FastAPI Backend
   ↓
-┌───────────────┬───────────────┐
-│               │               │
-PDF Parser    Gemini          Supabase
-│               │               │
-Resume Text    AI Analysis     Database
-└───────────────┴───────────────┘
+  ├── PDF Parser
+  │      ↓
+  │   Resume Text
+  │
+  ├── Gemini AI
+  │      ↓
+  │   Resume Analysis
+  │
+  └── Supabase
+         ↓
+      Database
 
 ## Workflow
 
