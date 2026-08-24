@@ -1,22 +1,31 @@
-# Python
-__pycache__/
-*.pyc
-venv/
-
 # Environment
 .env
 .env.local
+.env.*.local
 
-# Uploads
-uploads/
+# Node
+node_modules/
+.next/
+out/
 
-# Next.js
-frontend/.next/
-frontend/node_modules/
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
 
-# IDE
-.vscode/
+# Resume uploads
+backend/uploads/*
+!backend/uploads/.gitkeep
 
 # OS
 .DS_Store
 Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Logs
+*.log
