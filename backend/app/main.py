@@ -21,10 +21,13 @@ app = FastAPI(
 
 app.add_middleware(
     CORSMiddleware,
+
     allow_origins=[
         "http://localhost:3000",
-        "https://smart-resume-screener-ec426dqkf-sam-davis07s-projects.vercel.app/",
     ],
+
+    allow_origin_regex=r"https://.*\.vercel\.app",
+
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
