@@ -102,21 +102,6 @@ export default function Sidebar() {
 
       </nav>
 
-
-      {/* Bottom */}
-
-      <div className="border-t border-zinc-800 p-4">
-
-        <Link
-          href="/settings"
-          className="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm text-zinc-400 hover:bg-zinc-900 hover:text-white"
-        >
-          <Settings size={18} />
-          Settings
-        </Link>
-
-      </div>
-
     </aside>
   );
 }

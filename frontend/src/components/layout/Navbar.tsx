@@ -2,7 +2,6 @@
 
 import {
   Search,
-  Bell,
   X,
   User,
   BriefcaseBusiness,
@@ -478,21 +477,6 @@ export default function Navbar() {
       ================================= */}
 
       <div className="flex items-center gap-5">
-
-
-        {/* Notifications */}
-
-        <button
-          type="button"
-          className="relative text-zinc-400 transition hover:text-white"
-          aria-label="Notifications"
-        >
-
-          <Bell size={19} />
-
-          <span className="absolute -right-1 -top-1 h-2 w-2 rounded-full bg-white" />
-
-        </button>
 
 
         {/* User */}
